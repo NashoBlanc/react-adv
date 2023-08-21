@@ -16,8 +16,8 @@ interface Route {
 
 export const routes: Route[] = [
     {
-        path: 'lazy1',
-        component: lazy(/* webpackChunkName: "LazyLayout"*/() => import('../01-lazyload/layout/LazyLayout')),
+        path: '/lazyload',
+        component: lazy(() => import(/* webpackChunkName: "LazyPage1"*/'../01-lazyload/layout/LazyLayout')),
         name: 'Lazyloading Nested'
     },
     {
