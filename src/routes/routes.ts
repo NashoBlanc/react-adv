@@ -1,5 +1,6 @@
 import { LazyExoticComponent, lazy } from "react";
 import NoLazy from "../01-lazyload/pages/NoLazy";
+import { ShoppingPage } from "../02-component-patters/pages/ShoppingPage";
 
 
 type JSXComponent = () => JSX.Element;
@@ -24,6 +25,12 @@ export const routes: Route[] = [
         path: '/no-lazy',
         component: NoLazy,
         name: 'No lazy loading'
+    },
+
+    {
+        path: '/shopping',
+        component: ShoppingPage,
+        name: 'Shoping'
     },
     // {
     //     path: 'lazy2',
