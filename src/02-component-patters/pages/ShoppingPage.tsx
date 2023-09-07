@@ -17,6 +17,12 @@ export const ShoppingPage = () => {
                 flexWrap: 'wrap'
             }}>
 
+            <ProductCard product={product}>
+                    <ProductCard.Image />
+                    <ProductCard.Title title='DOs'/>
+                    <ProductCard.Buttons />
+                </ProductCard>
+
                 <ProductCard product={product}>
                     <ProductImage />
                     <ProductTitle />
