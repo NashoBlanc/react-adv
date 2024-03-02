@@ -4,7 +4,7 @@ import noImage from '../assets/no-image.jpg';
 import styles from '../styles/styles.module.css';
 
 
-export const ProductImage = ({ img = ''}) => {
+export const ProductImage = ({ img = '', className = ''}) => {
     const { product } = useContext(ProductContext);
     let imgToShow;
 
@@ -15,7 +15,9 @@ export const ProductImage = ({ img = ''}) => {
     } else {
         imgToShow = noImage
     }
+
+    console.log(imgToShow)
         return (
-            <img className={styles.productImg}  src={imgToShow} alt='Product'/>
+            <img className={ `${styles.productImg} ${className}`} src={imgToShow} alt='Product'/>
         )
 }
