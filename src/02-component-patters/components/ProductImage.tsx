@@ -16,7 +16,6 @@ export const ProductImage = ({ img = '', className = ''}) => {
         imgToShow = noImage
     }
 
-    console.log(imgToShow)
         return (
             <img className={ `${styles.productImg} ${className}`} src={imgToShow} alt='Product'/>
         )
