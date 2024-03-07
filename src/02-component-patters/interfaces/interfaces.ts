@@ -2,8 +2,10 @@ import { ReactElement } from "react";
 
 export interface ProductCardProps {
     product: Product;
-    children?: ReactElement | ReactElement[],
-    className?: string
+    children?: ReactElement | ReactElement[];
+    className?: string;
+    style?: React.CSSProperties;
+    onChange?: ( args: onChangeArgs) => void;
 }
 
 export interface Product {
@@ -16,4 +18,10 @@ export interface ProductCounterProps {
     counter: number;
     increaseBy: (value: number) => void;
     product: Product;
+}
+
+
+export interface onChangeArgs {
+    product: Product;
+    count: number;
 }
