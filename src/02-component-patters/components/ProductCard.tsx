@@ -6,7 +6,8 @@ import { Product, ProductCounterProps, initialValues, onChangeArgs } from '../in
 
 export interface ProductCardProps {
     product: Product;
-    children?: ReactElement | ReactElement[];
+    // children?: ReactElement | ReactElement[];
+    children: () => JSX.Element;
     className?: string;
     style?: React.CSSProperties;
     onChange?: ( args: onChangeArgs) => void;
@@ -20,15 +21,17 @@ const { Provider } = ProductContext;
 export const ProductCard = ({children, product, className, style, onChange, value, initialValues}: ProductCardProps) => {
 
        const {counter, increaseBy } =  useProduct({onChange, product, value, initialValues});
+       const maxCount = initialValues?.maxCount!;
 
     return (
         <Provider value={{
             counter,
             increaseBy,
-            product
+            product,
+            maxCount
         }}>
             <div className={ `${styles.productCard} ${className}`}>
-            {children}
+            {children()}
         </div>
         </Provider>
     )
