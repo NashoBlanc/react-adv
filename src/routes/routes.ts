@@ -1,6 +1,7 @@
 import { LazyExoticComponent, lazy } from "react";
 import NoLazy from "../01-lazyload/pages/NoLazy";
 import { ShoppingPage } from "../02-component-patters/pages/ShoppingPage";
+import { RegisterPage } from "../03-forms/pages/RegisterPage";
 
 
 type JSXComponent = () => JSX.Element;
@@ -17,16 +18,10 @@ interface Route {
 
 export const routes: Route[] = [
     {
-        path: '/lazyload',
-        component: lazy(() => import(/* webpackChunkName: "LazyPage1"*/'../01-lazyload/layout/LazyLayout')),
-        name: 'Lazyloading Nested'
+        path: '/',
+        component: RegisterPage,
+        name: 'Register'
     },
-    {
-        path: '/no-lazy',
-        component: NoLazy,
-        name: 'No lazy loading'
-    },
-
     {
         path: '/shopping',
         component: ShoppingPage,
