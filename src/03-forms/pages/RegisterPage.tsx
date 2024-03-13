@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, DOMAttributes, FormEvent, FormEventHandler, useState } from 'react';
 import '../styles/styles.css';
 
 export const RegisterPage = () => {
@@ -12,18 +12,22 @@ export const RegisterPage = () => {
 
     const {name, email, password1, password2 } = registerData;
 
-    const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const onChange = (event: any) => {
         setRegisterData( prev => ({
             ...prev,
             [event.target.name]: event.target.value
         }))
+    }
+
+    const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
     }
     
     return (
         <div>
             <h1>Register Page</h1>
 
-            <form noValidate>
+            <form noValidate onSubmit={(e) => onSubmit(e)}>
                 <input type="text" placeholder="Name" value={name} onChange={(e) => onChange(e)} name='name'>
                 </input>
                 <input type="email" placeholder="Email" value={email} name='email' onChange={(e) => onChange(e)}>
