@@ -3,6 +3,7 @@ import NoLazy from "../01-lazyload/pages/NoLazy";
 import { ShoppingPage } from "../02-component-patters/pages/ShoppingPage";
 import { RegisterPage } from "../03-forms/pages/RegisterPage";
 import { FormikBasicPage } from "../03-forms/pages/FormikBasicPage";
+import { FormikTupPage } from "../03-forms/pages/FormikYupPage";
 
 
 type JSXComponent = () => JSX.Element;
@@ -20,7 +21,7 @@ interface Route {
 export const routes: Route[] = [
     {
         path: '/',
-        component: FormikBasicPage,
+        component: FormikTupPage,
         name: 'Register'
     },
     {
