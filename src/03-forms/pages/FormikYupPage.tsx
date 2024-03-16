@@ -5,7 +5,7 @@ import '../styles/styles.css'
 
 export const FormikTupPage = ( ) => {
 
-    const { handleChange, values, handleSubmit, errors, touched, handleBlur } = useFormik({
+    const { handleSubmit, errors, touched, getFieldProps } = useFormik({
         initialValues: {
             firstName: '',
             lastName: '',
@@ -34,10 +34,7 @@ export const FormikTupPage = ( ) => {
                 <label htmlFor="firstName">First Name</label>
                 <input 
                     type="text" 
-                    name="firstName"
-                    onBlur={ handleBlur }
-                    onChange={ handleChange }
-                    value={ values.firstName }
+                    { ...getFieldProps('firstName') }
                     > 
                 </input>
                 { touched.firstName && errors.firstName && <span> { errors.firstName } </span>}
@@ -45,10 +42,7 @@ export const FormikTupPage = ( ) => {
                 <label htmlFor="lastName">Last Name</label>
                 <input 
                     type="text" 
-                    name="lastName"
-                    onBlur={ handleBlur }                  
-                    onChange={ handleChange }
-                    value={ values.lastName }
+                    { ...getFieldProps('lastName') }
                     >        
                 </input>
                 { touched.lastName && errors.lastName && <span> { errors.lastName } </span>}
@@ -56,10 +50,7 @@ export const FormikTupPage = ( ) => {
                 <label htmlFor="email">Email Address</label>
                 <input 
                     type="text" 
-                    name="email"
-                    onBlur={ handleBlur }           
-                    onChange={ handleChange }
-                    value={ values.email }>
+                    { ...getFieldProps('email') }>
                 </input>
 
                 { touched.email && errors.email && <span> { errors.email } </span>}
